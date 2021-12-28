@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 class ViewPage extends StatelessWidget {
   final String image;
-  // final String fullName;
+  final String fullName;
   final String age;
   final String role;
   final String details;
   const ViewPage({
     Key? key,
     required this.image,
-    // required this.fullName,
+    required this.fullName,
     required this.age,
     required this.role,
     required this.details,
@@ -28,24 +28,26 @@ class ViewPage extends StatelessWidget {
         height: double.infinity,
         child: Row(
           children: [
-            Container(
-              child: Image.asset("assets/images/players/$image"),
+            Expanded(
+              flex: 1,
+              child: Container(
+                child: Image.asset("assets/images/players/$image"),
+              ),
             ),
-            ListView(
-              children: [
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: Text("$fullName"),
-                // ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("$image"),
-                ),
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: Text("$details"),
-                // ),
-              ],
+            Expanded(
+              flex: 2,
+              child: ListView(
+                children: [
+                  ListTile(
+                    title: Text("$fullName"),
+                    subtitle: Text("$role"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Text("$details"),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

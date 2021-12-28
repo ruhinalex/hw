@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
                 builder: (context) {
                   return ViewPage(
                     image: playersData[i]["photo"],
-                    // fullName: playersData[i]["full_name"],
+                    fullName: playersData[i]["full_name"],
                     age: playersData[i]["age"],
                     role: playersData[i]["role"],
                     details: playersData[i]["details"],
